@@ -100,8 +100,12 @@ def login_interactive(playwright) -> BrowserContext:
             return context
 
         # Also check if the page title indicates we're on the main page
-        title = page.title().lower()
-        if "feed" in title or "linkedin" in title and "login" not in title and "sign" not in title:
+        try:
+            title = page.title().lower()
+        except Exception:
+            # Page may be navigating; skip this check and retry next iteration
+            continue
+        if "feed" in title or ("linkedin" in title and "login" not in title and "sign" not in title):
             # Double-check by trying to navigate to feed
             page.goto(FEED_URL, wait_until="domcontentloaded")
             page.wait_for_timeout(2000)
