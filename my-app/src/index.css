@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --color-calm-50: #f0f7ff;
+  --color-calm-100: #e0efff;
+  --color-calm-200: #b8dbff;
+  --color-calm-300: #7abfff;
+  --color-calm-400: #3a9eff;
+  --color-calm-500: #1a7fef;
+  --color-calm-600: #0d63cc;
+  --color-calm-700: #0b4fa5;
+  --color-calm-800: #0e4488;
+  --color-calm-900: #123a70;
+  --color-calm-950: #0c2549;
+
+  --color-dark-bg: #0f172a;
+  --color-dark-surface: #1e293b;
+  --color-dark-card: #334155;
+  --color-dark-text: #f1f5f9;
+  --color-dark-muted: #94a3b8;
+
+  --color-light-bg: #f8fafc;
+  --color-light-surface: #ffffff;
+  --color-light-card: #f1f5f9;
+  --color-light-text: #0f172a;
+  --color-light-muted: #64748b;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Dark mode by default */
+html {
+  color-scheme: dark;
+}
+
+html.light {
+  color-scheme: light;
+}
+
+/* Ensure minimum font size */
+body {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Minimum touch target for all buttons */
+button, a[role="button"], [role="button"] {
+  min-height: 44px;
+  min-width: 44px;
+}
