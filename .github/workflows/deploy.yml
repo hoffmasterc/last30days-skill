@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ['claude/anxiety-management-app-g5FnQ']
+    branches: ['main']
 
 permissions:
   contents: read
